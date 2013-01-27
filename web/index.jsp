@@ -12,6 +12,15 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Practicing with POST and GET method!</h1>
+        <p>Enter your first and last name and click Submit!</p>
+
+    <form action="GreetingServlet" method="POST">
+         First Name: <input type="text" name="firstName" size="20"><br />
+         Last Name : <input type="text" name="lastName" size="20">
+         <br /><br />
+         <input type="submit" value="Submit">
+     </form> 
+
     </body>
 </html>

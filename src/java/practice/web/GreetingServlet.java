@@ -1,19 +1,21 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package practice.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Scott Roethle
+ * @author Scotty
  */
-@WebServlet(name = "practiceServlet", urlPatterns = {"/practiceServlet"})
-public class practiceServlet extends HttpServlet {
+public class GreetingServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
@@ -29,16 +31,22 @@ public class practiceServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        String firstName = request.getParameter("firstName").toString();
+        String lastName = request.getParameter("lastName").toString();
+
+
         try {
-            /* TODO output your page here. You may use following sample code. */
+            
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet practiceServlet</title>");            
+            out.println("<title>Servlet GreetingServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet practiceServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet GreetingServlet at " + request.getContextPath() + "</h1>");
+            out.println("<p>Welcome " + firstName + " " + lastName + "</p>");
             out.println("</body>");
             out.println("</html>");
+            
         } finally {            
             out.close();
         }
